@@ -1,0 +1,76 @@
+/* ==UserStyle==
+@name           DeepL
+@namespace      https://gist.github.com/m-atarashi
+@version        1.0.0
+@description    Vivaldiサイドパネル用＋フォントカスタマイズ＋広告他非表示
+@author         m-atarasgu
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.deepl.com") {
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+    /* serif */
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
+    
+    
+    div#lmt_pro_ad_container,
+    div#dl_quotes_container,
+    aside[aria-label="対応言語"] {
+        display: none !important;
+    }
+    
+    textarea[lang="ja-JP"] {
+        font-family: 'FinalSix Light', 'Comfortaa', 'Zen Maru Gothic', sans-serif !important;
+    }
+    textarea[lang="en-EN"], 
+    textarea[lang="en-EN"] + .lmt__source_textarea_overlay .lmt__source_textarea_overlay__sentence--active,
+    textarea[lang="en-EN"] + .lmt__source_textarea_overlay .lmt__source_textarea_overlay__text {
+        font-family: 'Zen Maru Gothic', sans-serif !important;
+        font-size: 20px !important;
+    }
+
+    .lmt--web .lmt__source_textarea {
+        overflow-y: visible;
+    }
+    div.lmt__source_textarea_overlay.lmt__textarea_base_style::-webkit-scrollbar,
+    .lmt--web .lmt__source_textarea::-webkit-scrollbar {
+        display: none !important;
+    }
+    
+    
+    @media (max-width: 500px) {
+        /* 入力欄・翻訳結果を縦並びにする */
+        .lmt__sides_container {
+            display: block !important;
+        }
+        .lmt__side_container {
+            width: 100% !important;
+        }
+        
+        /* レイアウト調整 */
+        body {
+            min-width: 0px !important;
+            min-height: 0px !important;
+            overflow-x: hidden !important; 
+        }
+        .lmt__side_container.lmt__side_container--target {
+            margin: 15px 0px !important;
+        }
+        .integratedLanguageSelectors .dl_translator_page_container .lmt--web .lmt__text .lmt__textarea_container {
+            padding-top: 15px !important;
+            min-height: 200px !important;
+        }
+        
+        /* 非表示 */
+        div.lmt__docTrans-tab-container,
+        div.lmt__textarea_separator--has-top-toolbar, 
+        div#lmt_pro_ad_container,
+        div.dl_body--redesign.dl_top_element--wide.dl_visible_desktop_only.eSEOtericText, 
+        div#dl_quotes_container,
+        footer {
+            display: none !important;
+        }
+    }
+}
