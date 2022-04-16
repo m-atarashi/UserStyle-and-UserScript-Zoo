@@ -1,0 +1,258 @@
+/* ==UserStyle==
+@name           Glassy TweetDeck
+@namespace      https://github.com/m-atarashi/UserStyle-Zoo/TweetDeck
+@version        1.0.1
+@description    Glassy TweetDeck
+@author         m-atarashi
+==/UserStyle== */
+
+@-moz-document url-prefix("https://tweetdeck.twitter.com/") {
+    /*─────────────────────── @import ───────────────────────*/
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap'); /* Comfortaa */
+        @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap'); /* 'Zen Maru Gothic' */
+    
+    /*─────────────────────── Variable ───────────────────────*/
+    :root {
+        --stylus-bg-url        : url();
+        --stylus-bg-cover-color: rgba(0, 0, 0, 0.15);
+        --stylus-font-family: "FinalSix", 'Comfortaa', "BIZ UDPGothic", 'Zen Maru Gothic', cursive;
+        
+        /* column */
+        --stylus-column-bg-gradient           : linear-gradient(to bottom, #ffffff30, #ffffff05);
+        --stylus-column-border                : 1px solid #ffffff28;
+        --stylus-column-border-radius         : 4px;
+        --stylus-column-box-shadow            : 0 0 4px RGBA(0, 0, 0, .22);
+        --stylus-column-box-shadow-inset-light: inset 0 0 2px 0px #000a;
+        --stylus-column-filter                : blur(6px);
+        
+    }
+    
+/*───────────────────────────────────────────────────────────────────*/ 
+    /* Loding */
+    img.spinner-centered, .spinner-small {
+        display: none !important;
+    }
+    
+    
+/*───────────────────────────────────────────────────────────────────*/
+    /* Fonts, Main text color, Background image */
+    body {
+        /* fit width to window */
+        background-image   : var(--stylus-bg-url) !important;
+        background-position: right bottom !important;
+        background-size    : auto 100% !important;
+        transition         : background-image 2.5s ease !important;
+    }
+    html::before {
+        content        : "";
+        position       : fixed;
+        width          : 100%;
+        height         : 100%;
+        z-index        : -1;
+        background     : var(--stylus-bg-cover-color);
+        backdrop-filter: blur(0px)
+    }
+    
+    .column-title-back, .column-header, .column-header-temp, .account-link,
+    html {
+        color: white !important;
+    }
+    * {
+        font-family: var(--stylus-font-family) !important;
+    }
+
+/*───────────────────────────────────────────────────────────────────*/
+    /* main columns */
+    /* header */
+    .column-header, .column-header-temp, .column-options {
+        background: var(--stylus-column-bg-gradient) !important;
+    }
+    
+    /* body */
+    .column {
+        /* make card shadowy, blurry and glassy */
+        position               : relative !important;
+        background             : var(--stylus-column-bg-gradient) !important;
+        border                 : none !important;
+        border-radius          : var(--stylus-column-border-radius) !important;
+        box-shadow             : var(--stylus-column-box-shadow) !important;
+        backdrop-filter        : var(--stylus-column-filter) !important;
+        /* for Safari*/ 
+        -webkit-backdrop-filter: var(--stylus-column-filter) !important;
+    }
+    .column::before {
+        /* make card border */
+        content      : "";
+        position     : absolute;
+        z-index      : -1;
+        width        : 100%;
+        height       : 100%;
+        border       : var(--stylus-column-border);
+        border-radius: var(--stylus-column-border-radius);
+        box-shadow   : var(--stylus-column-box-shadow-inset-light);
+    }
+    
+    .search-results-container .stream-item, .stream-item {
+        background: transparent;
+    }
+    
+    /* border to sparate tweets */
+    .column-header, .column-header-temp, .stream-item {
+        border: none;
+    }
+    
+    /* scrollbar */
+    .column-scroller::-webkit-scrollbar {
+        display: none;
+    }
+    
+     /* color of small text */
+    .txt-mute,
+    .chirp-container .stream-item:not(:hover):not(.is-selected-tweet) .dm-action, .chirp-container .stream-item:not(:hover):not(.is-selected-tweet) .tweet-action, .chirp-container .stream-item:not(:hover):not(.is-selected-tweet) .tweet-detail-action,
+    .dm-action, .tweet-action, .tweet-detail-action,
+    .stat-word,
+    .txt-mute a:not(:hover):not(:focus) {
+        color: RGBA(220, 220, 220, 0.8);
+    }
+    
+    /* 引用ツイートの文字色 */
+    .quoted-tweet {
+        color: white !important
+    }
+    
+    /* 注目しているツイート */
+    .scroll-conversation,
+    .tweet-detail-wrapper {
+        background: transparent !important;
+    }
+    .detail-view-inline-text
+    {
+        background: RGBA(255, 255, 255, 0.3);
+    }
+    
+/*───────────────────────────────────────────────────────────────────*/
+    /* サイドバー透過 */
+    .is-condensed .tweet-button,
+    .app-header, .column-nav-item, .app-title, .app-navigator,
+    .column-panel,
+    .app-columns-container, .app-content {
+        background: transparent !important;
+    }
+    .join-team {
+        display: none;
+    }
+    .drawer-header {
+        border: none;
+    }
+    
+    /* オプションのポップアップ透過 */
+    .dropdown-menu {
+        background: RGBA(200, 200, 200, 0.4);
+    }
+    .non-selectable-item,
+    .dropdown-menu a:not(:hover):not(:focus) {
+        color: white;
+    }
+    
+    /* 左からフェードインしてくるアカウントのやつ */
+    .app-nav-tab.is-selected,
+    .account-settings-row, .account-profile-header {
+        background: transparent !important;
+    }
+    .account-settings-bb {
+        border-bottom: none;
+    }
+    
+    /* 左から（ry)の検索欄 */
+    .app-header .search-input-control input {
+        background: transparent;
+    }
+    .app-search-input {
+        border: none;
+    }
+    .app-search-fake, .app-search-input {
+        background: RGBA(16, 23, 30, 0.3);
+    }
+    div.js-popover.popover.br-1.bs-1.popover-position-rt {
+        background: RGBA(255, 255, 255, 0.3);
+    }
+    
+    /* Tweet Button */
+    button.js-show-drawer.js-show-tip.Button.Button--primary.Button--large.tweet-button.margin-t--8.margin-b--10 {
+        background: RGBA(29, 177, 242, 0.3);
+    }
+    /* 背景 */
+    .compose {
+        background: RGBA(44, 124, 185, 0.5);
+    }
+    /* 入力欄 */
+    .bg-color-twitter-white {
+        background: transparent !important;
+    }
+    /* ツイートボタン */
+    .Button.is-disabled, .Button[disabled], .follow-btn.is-disabled button, button.is-disabled, button.is-disabled:focus, button[disabled], fieldset[disabled] .Button, fieldset[disabled] button, fieldset[disabled] input[type=button], input.is-disabled[type=button], input.is-disabled[type=button]:focus, input[disabled][type=button] {
+        opacity: 1;
+    }
+    button.js-send-button.js-spinner-button.js-show-tip.Button--primary.btn-extra-height.padding-v--6.padding-h--12.is-disabled,
+    .btn-on-blue {
+        background: RGBA(44, 124, 185, 0.5);
+        box-shadow: 0px 0px 6px 3px RGBA(44, 124, 185, .8);
+        margin-top: 1px;
+        border: none;
+    }
+    button.js-send-button.js-spinner-button.js-show-tip.Button--primary.btn-extra-height.padding-v--6.padding-h--12.is-disabled:hover,
+    .btn-on-blue:hover {
+        background: RGBA(0, 95, 179, 0.5);
+        box-shadow: 0px 0px 6px 3px RGBA(0, 95, 179, .8);
+    }
+    .compose-text-container {
+        background: RGBA(255, 255, 255, 0.8);
+    }
+    .column.is-focused {
+        box-shadow: 0 0 0 5px RGBA(29, 161, 242, 0.3);
+        box-shadow: 0 0 0 5px RGBA(44, 124, 185, 0.5);
+    }
+    
+    /* アカウントの詳細情報ポップアップ */
+    .prf-meta, .mdl {
+        background: transparent;
+    }
+    .prf-meta, .prf-stats li+li a,
+    .prf .lst-profile a {
+        border: none;
+    }
+    .prf-stats a:hover, .prf-stats a,
+    .prf-stats a:hover strong, .prf-stats a strong,
+    .prf .lst-profile i, .prf .lst-profile span {
+        color: white;
+    }
+    
+    /* リスト追加とかのポップアップ */
+    .mdl-content > * {
+        background: RGBA(255, 255, 255, 0.25);
+    }
+    .mdl-content .lst-group * {
+        color: white;
+    }
+    .mdl-content .lst-group a:hover {
+        background: RGBA(255, 255, 255, 0.5);
+    }
+    .column-background-fill {
+        background: RGBA(255, 255, 255, 0.1);
+    }
+    .mdl-column-rhs ::-webkit-scrollbar {
+        display: none;
+    }
+    .mdl-content .lst-group input {
+        background: RGBA(255, 255, 255, 0.5);
+    }
+    
+    #open-modal .lst-launcher a span {
+        color: white;
+    }
+    
+    /* よくわからんごみ */
+    div.js-team-invitations-container.column-panel.border-box.bg-color-twitter-lightest-gray {
+        display: none;
+    }
+}
