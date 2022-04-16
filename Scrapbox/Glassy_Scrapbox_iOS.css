@@ -1,0 +1,574 @@
+/* ==UserStyle==
+@name           Glassy Scrapbox for iOS
+@namespace      https://gist.github.com/m-atarashi
+@version        1.0.7
+@description    GLASSY AND BLURRY STYLE FOR SCRAPBOX.IO
+@author         m-atarashi
+@match          https://scrapbox.io/*
+==/UserStyle== */
+/*
+    Default background image's url: https://images.unsplash.com/photo-1547104442-044448b73426 by Unsplash.com
+    Source : https://unsplash.com/photos/56pMIREBAcg by Sincerely Media
+*/
+
+/*────────────────── Google Fotns TASUKARU ──────────────────*/
+/* sans-serif is default fontstyle */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+
+/* serif */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap');
+
+/* monospace for code-block */
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
+/* icons for popup menu when you select chars */
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+
+/*────────────────── Custom Variable ──────────────────*/
+:root {
+    /* background-image */
+    --stylus-bg-url: url("https://images.unsplash.com/photo-1547104442-044448b73426");
+    --stylus-bg-cover-color: rgba(0, 0, 0, 0.15);
+
+    /* font */
+    --stylus-font-family: 'FinalSix Light', 'Comfortaa', 'Zen Maru Gothic', sans-serif;
+    --stylus-font-weight-codeblock: 500;
+    --stylus-font-family-serif: 'Josefin Slab', 'Kaisei Opti', serif;
+    --stylus-primary-color: #41b059;
+    --stylus-primary-color-rgb: 65 176 89;
+
+    /* card */
+    --stylus-card-bg-gradient           : linear-gradient(to bottom, #ffffff30, #ffffff05);
+    --stylus-card-border                : 1px solid #ffffff28;
+    --stylus-card-border-radius         : 16px;
+    --stylus-card-box-shadow            : 0 0 4px RGBA(0, 0, 0, .22);
+    --stylus-card-box-shadow-inset-light: inset 0 0 1px 0px #000;
+    --stylus-card-filter                : blur(2px);
+    --stylus-card-grid-margin           : 0 8px 8px 0;
+    /* card hover action */
+    --stylus-card-transition             : all .5s ease-out, transform .42s cubic-bezier(.71, 1.9, .7, .89);
+    --stylus-card-after-transition       : all .5s ease-out, transform .6s cubic-bezier(0, -1.17, .44, 1.27);
+    --stylus-card-hover-scale            : scale(1.1);
+    --stylus-card-hover-blur             : blur(.0px);
+    --stylus-card-hover-box-shadow       : 0 0 24px 0px #00000057;
+    --stylus-card-hover-before-border    : 0.82px solid #ffffff98;
+    --stylus-card-hover-before-box-shadow: inset 0 0 0.4px 0px #000;
+    /* card-thumnail */
+    --stylus-card-img-margin       : 0px 8px 0px 8px;
+    --stylus-card-img-border-radius: 2px;
+    --stylus-card-img-opacity      : 0.95;
+
+    /* page */
+    --stylus-page-bg                          : linear-gradient(to right, #ffffff18, #ffffff0C);
+    --stylus-code-block-bg                    : #ffffff6A;
+    --stylus-page-bg-blur                     : blur(8px);
+    --stylus-page-tool-btn-hover-filter       : blur(4px);
+    --stylus-page-tool-btn-hover-border-radius: 30%;
+    --stylus-page-tool-btn-transition         : all 0.5s ease, color 1.3s ease;
+    --stylus-page-line-font-weight            : 500;
+    --stylus-telomere-color                   : #ffffff4f;
+    --stylus-popup-menu-bg                    : #eaf4fc2f !important;
+    --stylus-popup-menu-box-shadow            : 0 0 1px RGBA(0, 0, 0, .22);
+    --stylus-popup-menu-box-shadow-inset-light: inset 0 0 2px 0px #000a;
+    --stylus-popup-menu-border-radius         : 12px;
+    --stylus-popup-menu-backdrop-filter       : blur(1px);
+
+    /* serch form */
+    --stylus-serch-form-transition           : all .6s ease;
+    --stylus-serch-form-bg                   : #ffffff15;
+    --stylus-serch-form-focus-bg             : #ffffff40;
+    --stylus-serch-form-backdrop-filter-focus: blur(12px);
+
+    /* tool-badge, dropdown-menu, project-home*/
+    --stylus-tool-badge-bg-filter   : blur(2px);
+    --stylus-dropdown-menu-bg       : linear-gradient(to bottom left, #B3E5FC2c, #E1F5FE25);
+    --stylus-dropdown-text-color    : white;
+    --stylus-project-name-transition: transform 1s cubic-bezier(.71, 1.9, .7, .89);
+
+    /* scrollbar */
+    --stylus-scbar-width              : 12px;
+    --stylus-scbar-track-border-radius: 12px;
+    --stylus-scbar-track-box-shadow   : inset 0 0 6px #00000018;
+    --stylus-scbar-track-filter       : blur(20px);
+    --stylus-scbar-thumb-radius       : 12px;
+    --stylus-scbar-thumb-color        : linear-gradient(to bottom, #fff0, #ffffff0C);
+    --stylus-scbar-thumb-hover-color  : #00000005;
+}
+
+
+/*────────────────── Original Variable ──────────────────*/
+* {
+    /* bg color */
+    --card-bg       : #ffffff18 !important;
+    --card-title-bg : #ffffff00 !important;
+    --tool-badge-bg : #ffffff3f !important;
+    --page-bg       : #ffffff25 !important;
+    --quote-bg-color: #e0e0e060 !important;
+    /* text color */
+    --card-title-color      : #fffd !important;
+    --card-description-color: #fffe !important;
+    --page-text-color       : #fff !important;
+    --line-title-color      : #fff !important;
+    --tool-text-color       : #efefefec !important;
+    --cursor-color          : var(--page-text-color);
+}
+
+
+/*──────────────────────────────────────────────────────────────────────────────*/
+body {
+    /* fit width to window */
+    background-image   : var(--stylus-bg-url) !important;
+    background-position: top left !important;
+    background-size    : 100% auto !important;
+    transition         : background-image 2.5s ease !important;
+}
+html::before {
+    /* process background image */
+    content        : "";
+    position       : fixed;
+    width          : 100%;
+    height         : 100%;
+    z-index        : -1;
+    background     : var(--stylus-bg-cover-color);
+    backdrop-filter: blur(0px)
+}
+
+*:not(i):not(.material-icons) {
+    /* I'm sorry. I forgot the meaning of :not(i)... */
+    font-family: var(--stylus-font-family) !important;
+}
+span.text.code-block *:not(i) {
+    /* code font */
+    font-family: var(--stylus-font-family-codeblock) !important;
+    font-weight: var(--stylus-font-weight-codeblock) !important;
+}
+
+
+/*──────────────────────────────────────────────────────────────────────────────*/
+html {
+    overflow: overlay;
+}
+::-webkit-scrollbar {
+    width: var(--stylus-scbar-width);
+}
+::-webkit-scrollbar-track {
+    border-radius          : var(--stylus-scbar-thumb-radius);
+    box-shadow             : var(--stylus-scbar-track-box-shadow);
+    backdrop-filter        : var(--stylus-scbar-track-filter);
+    -webkit-backdrop-filter: var(--stylus-scbar-track-filter);
+}
+::-webkit-scrollbar-thumb {
+    border       : var(--stylus-card-border);
+    border-radius: var(--stylus-scbar-thumb-radius);
+    box-shadow   : var(--stylus-card-box-shadow-inset-light);
+    background   : var(--stylus-scbar-thumb-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--stylus-scbar-thumb-hover-color);
+}
+
+
+/*──────────────────────────────────────────────────────────────────────────────*/
+.grid li.page-list-item a {
+    /* make card shadowy, blurry and glassy */
+    position               : relative !important;
+    background             : var(--stylus-card-bg-gradient) !important;
+    border                 : none;
+    border-radius          : var(--stylus-card-border-radius) !important;
+    box-shadow             : var(--stylus-card-box-shadow) !important;
+    backdrop-filter        : var(--stylus-card-filter) !important;
+    -webkit-backdrop-filter: var(--stylus-card-filter) !important;
+}
+
+.grid li.page-list-item a::before {
+    /* make card border */
+    content      : "";
+    position     : absolute;
+    z-index      : -1;
+    width        : 100%;
+    height       : 100%;
+    border       : var(--stylus-card-border) !important;
+    border-radius: var(--stylus-card-border-radius) !important;
+    box-shadow   : var(--stylus-card-box-shadow-inset-light) !important;
+}
+
+.grid li.page-list-item a .title {
+    font-family: var(--stylus-font-family-serif) !important;
+}
+
+/* enlarge margin and make round the preview image */
+.grid li.page-list-item a .icon {
+    margin: var(--stylus-card-img-margin) !important;
+}
+.grid li.page-list-item a .icon img {
+    opacity      : var(--stylus-card-img-opacity) !important;
+    border-radius: var(--stylus-card-img-border-radius) !important;
+}
+
+/* I love thin margin in grid design */
+.page-list .grid li {
+    margin: var(--stylus-card-grid-margin) !important;
+}
+
+/* ───── hover actions ───── */
+.grid li.page-list-item a {
+    /* card hover action */
+    transition: var(--stylus-card-after-transition), box-shadow 0.6s ease-in-out !important;
+}
+.grid li.page-list-item a::before {
+    /* card hover action */
+    transition: var(--stylus-card-transition), box-shadow 3.2s ease !important;
+}
+
+.grid li.page-list-item a .hover {
+    /* overwrite default setting */
+    background: var(--stylus-card-bg) !important;
+}
+
+.grid li.page-list-item a:hover {
+    /* make larger and more shadowy */
+    z-index                : 1;
+    box-shadow             : var(--stylus-card-hover-box-shadow) !important;
+    backdrop-filter        : var(--stylus-card-hover-blur) !important;
+    -webkit-backdrop-filter: var(--stylus-card-hover-blur) !important;
+    transform              : var(--stylus-card-hover-scale) !important;
+    transition             : var(--stylus-card-transition) !important;
+}
+
+.grid li.page-list-item a:hover::before {
+    /* minor adjustment */
+    border    : var(--stylus-card-hover-before-border) !important;
+    box-shadow: var(--stylus-card-hover-before-box-shadow) !important;
+}
+
+/*──────────────────────────────────────────────────────────────────────────────*/
+.line.line-title .text > span {
+    font-family: var(--stylus-font-family-serif) !important;
+}
+.line:not(.line-title) {
+    font-weight: var(--stylus-page-line-font-weight) !important;
+}
+
+.page {
+    /* glassy, blurry */
+    position               : relative !important;
+    background             : var(--stylus-page-bg) !important;
+    border                 : none !important;
+    border-radius          : var(--stylus-card-border-radius) !important;
+    box-shadow             : var(--stylus-card-hover-box-shadow) !important;
+    backdrop-filter        : var(--stylus-page-bg-blur) !important;
+    -webkit-backdrop-filter: var(--stylus-page-bg-blur) !important;
+}
+.page::before {
+    content : "";
+    position: absolute;
+    z-index : -1;
+    width   : 100%;
+    height  : 100%;
+    margin  : -42px -49px -42px;
+    /* const */
+    border       : var(--stylus-card-border) !important;
+    border-radius: var(--stylus-card-border-radius) !important;
+    box-shadow   : var(--stylus-card-box-shadow-inset-light) !important;
+}
+
+/* page margin seems to be depends on window width */
+@media (min-width: 768px) and (max-width: 991px) {
+    .page::before {
+        margin: -42px -42px -35px;
+    }
+}
+@media (max-width: 767px) {
+    .page::before {
+        margin: -28px -21px -42px;
+    }
+}
+
+/* bg of code-block */
+.code-block-margin,
+.text.code-block {
+    background-color: transparent !important;
+}
+.text.code-block .indent-mark > span:last-child .pad,
+.text.code-block .indent {
+    background-color       : var(--stylus-code-block-bg) !important;
+    backdrop-filter        : sepia(100%) !important;
+    -webkit-backdrop-filter: sepia(100%) !important;
+}
+.text.code-block .indent-mark > span:last-child .pad {
+    height       : inherit !important;
+    border-bottom: 1px solid;
+}
+.text.code-block .indent-mark > span:last-child .pad {
+    /* small bug fix */
+    border-bottom: none !important;
+}
+
+/* change telomere color */
+.line .telomere .telomere-border:not(.unread) {
+    border-color: var(--stylus-telomere-color) !important;
+}
+
+/* right side icon hover action */
+.page-menu .tool-btn:hover {
+    /* reset default transition */
+    background: transparent !important;
+}
+.page-menu .tool-btn {
+    transition: var(--stylus-page-tool-btn-transition);
+}
+.page-menu .tool-btn:hover {
+    color                  : #000 !important;
+    border                 : var(--stylus-card-border) !important;
+    border-radius          : var(--stylus-page-tool-btn-hover-border-radius) !important;
+    box-shadow             : var(--stylus-card-hover-box-shadow),
+                             var(--stylus-card-box-shadow-inset-light) !important;
+    backdrop-filter        : var(--stylus-page-tool-btn-hover-filter) !important;
+    -webkit-backdrop-filter: var(--stylus-page-tool-btn-hover-filter) !important;
+}
+
+/* popup-menu for text decoration */
+.popup-menu .button-container {
+    background-color       : var(--stylus-popup-menu-bg) !important;
+    border                 : var(--stylus-card-border) !important;
+    border-radius          : var(--stylus-popup-menu-border-radius) !important;
+    box-shadow             : var(--stylus-popup-menu-box-shadow),
+                             var(--stylus-popup-menu-box-shadow-inset-light) !important;
+    backdrop-filter        : var(--stylus-popup-menu-backdrop-filter) !important;
+    -webkit-backdrop-filter: var(--stylus-popup-menu-backdrop-filter) !important;
+}
+.popup-menu .button-container * {
+    background-color: transparent !important;
+}
+.popup-menu .button-container * {
+    color: #FAFAFA !important;
+}
+
+/*──────────────────────────────────────────────────────────────────────────────*/
+/* Make top bar shadowy, blurry and glassy */
+.navbar-default {
+    background             : var(--card-bg) !important;
+    border-bottom          : var(--stylus-card-border);
+    box-shadow             : var(--stylus-card-box-shadow),
+                             var(--stylus-card-box-shadow-inset-light) !important;
+    backdrop-filter        : blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+}
+/* enlarge project name area when a hover event emits */
+.quick-launch .project-home {
+    transition: var(--stylus-project-name-transition);
+}
+.quick-launch .project-home:hover {
+    transform       : scale(1.075);
+    background-color: transparent !important;
+}
+
+/* Blurry tool-badge (e.g area of "free plan")*/
+.quick-launch .plan-badge {
+    backdrop-filter        : var(--stylus-tool-badge-bg-filter) !important;
+    -webkit-backdrop-filter: var(--stylus-tool-badge-bg-filter) !important;
+}
+
+/*──────────────────────────────────────────────────────────────────────────────*/
+/* Make search form glassy */
+.search-form .form-group input {
+    border-radius   : 10px;
+    box-shadow      : var(--stylus-card-box-shadow), var(--stylus-card-box-shadow-inset-light);
+    background-color: var(--stylus-serch-form-bg);
+    transition      : var(--stylus-serch-form-transition);
+}
+
+.search-form .form-group input:focus,
+.search-form .form-group input.for-mobile {
+    background             : var(--stylus-serch-form-focus-bg) !important;
+    backdrop-filter        : var(--stylus-serch-form-backdrop-filter-focus) !important;
+    -webkit-backdrop-filter: var(--stylus-serch-form-backdrop-filter-focus) !important;
+}
+
+/* gradients in the search suggestions field */
+.search-form ul {
+    background: #eaf4fc80 !important;
+}
+
+/* make the scroll bars look like glass */
+.search-form ul::-webkit-scrollbar {
+    width        : 9.5px;
+    border-radius: 12px;
+}
+.search-form ul::-webkit-scrollbar-track {
+    border-radius: 12px;
+    background   : transparent;
+}
+.search-form ul::-webkit-scrollbar-thumb {
+    border       : var(--stylus-card-border);
+    border-radius: 30px;
+    background   : #ffffff4b;
+}
+
+/* disable default hover action */
+.search-form ul li > a:hover {
+    background: transparent !important;
+}
+
+
+/*──────────────────────────────────────────────────────────────────────────────*/
+.dropdown-menu {
+    /* glassy menu */
+    background             : var(--stylus-dropdown-menu-bg) !important;
+    border                 : var(--stylus-card-border) !important;
+    border-radius          : var(--stylus-card-border-radius) !important;
+    box-shadow             : var(--stylus-card-box-shadow-inset-light) !important;
+    backdrop-filter        : var(--stylus-tool-badge-bg-filter) !important;
+    -webkit-backdrop-filter: var(--stylus-tool-badge-bg-filter) !important;
+}
+.project-list-tab > a:hover {
+    background: #fff5 !important
+}
+.project-list-tab > a.active {
+    background: #ffffff78 !important;
+}
+.project-list-tab > a {
+    border                 : var(--stylus-card-border) !important;
+    border-radius          : var(--stylus-card-border-radius) !important;
+    box-shadow             : var(--stylus-card-box-shadow-inset-light) !important;
+    backdrop-filter        : var(--stylus-tool-badge-bg-filter) !important;
+    -webkit-backdrop-filter: var(--stylus-tool-badge-bg-filter) !important;
+}
+
+
+/*──── appear an underline from the center-bottom of the element ────*/
+.global-menu.dropdown-menu > li a:hover {
+    /* disable default hover action */
+    background: transparent !important;
+}
+
+.global-menu.dropdown-menu > li > a .project-display-name,
+.global-menu.dropdown-menu > li.dropdown-header .project-display-name {
+    position: relative;
+}
+.global-menu.dropdown-menu > li > a:not(.selected) {
+    color: var(--stylus-dropdown-text-color) !important;
+}
+
+.global-menu.dropdown-menu > li > a .project-display-name::after,
+.global-menu.dropdown-menu > li.dropdown-header .project-display-name::after {
+    content         : '';
+    position        : absolute;
+    bottom          : 2px;
+    left            : 0;
+    width           : 100%;
+    height          : 1.2px;
+    background      : #000;
+    transform-origin: center top;
+    transform       : scale(0, 1);
+    transition      : transform .7s 75ms ease;
+}
+
+.global-menu.dropdown-menu > li > a.selected .project-display-name::after,
+.global-menu.dropdown-menu > li.dropdown-header .selected .project-display-name::after {
+    /* The project you're looking at now shows a green line. */
+    background-color: var(--stylus-primary-color) !important;
+}
+
+.global-menu.dropdown-menu > li > a .project-display-name:hover::after,
+.global-menu.dropdown-menu > li.dropdown-header .project-display-name:hover::after {
+    transform: scale(1, 1);
+}
+
+
+/* Project Setting, Billing, Stream */
+.global-menu.dropdown-menu > li.section.section-right > a {
+    position     : relative;
+    border-radius: 8px;
+    transition   : all.8s ease;
+}
+
+.global-menu.dropdown-menu > li.section.section-right > a::after {
+    content        : '';
+    z-index        : -1;
+    position       : absolute;
+    bottom         : -2px;
+    left           : 0px;
+    width          : 100%;
+    height         : 100%;
+    margin         : 0 -2px 2px 0px;
+    border-radius  : 8px;
+    background     : linear-gradient(to top right, #B3E5FC10, #E1F5FE05);
+    backdrop-filter: blur(2px);
+    opacity        : 0;
+    transform      : scale(0.0);
+    transition     : all 1.2s ease;
+}
+.global-menu.dropdown-menu > li.section.section-right > a:hover {
+    box-shadow: 0 10px 24px 0px #0003;
+}
+
+.global-menu.dropdown-menu > li.section.section-right > a:hover::after {
+    opacity   : 1;
+    border    : var(--stylus-card-border);
+    box-shadow: var(--stylus-card-box-shadow-inset-light);
+    transform : scale(1);
+}
+
+/*──────────────────────────────────────────────────────────────────────────────*/
+/* card sorting menu */
+.page-sort-menu .tool-btn:hover {
+    color                  : var(--tool-text-color) !important;
+    border                 : var(--stylus-card-border) !important;
+    border-radius          : var(--stylus-card-border-radius) !important;
+    background             : transparent !important;
+    box-shadow             : 0 0 6px 0px RGBA(0, 0, 0, .22),
+                             var(--stylus-card-box-shadow-inset-light) !important;
+    backdrop-filter        : var(--stylus-tool-badge-bg-filter) !important;
+    -webkit-backdrop-filter: var(--stylus-tool-badge-bg-filter) !important;
+    transform              : scale(1.05);
+}
+.page-sort-menu .tool-btn {
+    transition: all .4s ease, transform .6s cubic-bezier(.71, 1.9, .7, .89);
+}
+
+ul.dropdown-menu.dropdown-menu-right > li > a:hover {
+    /* disable default hover action */
+    background: transparent !important;
+}
+ul.dropdown-menu.dropdown-menu-right > li > a:not(.selected) {
+    position: relative;
+    color: var(--tool-text-color) !important;
+}
+ul.dropdown-menu.dropdown-menu-right > li > a::after {
+    content: "";
+    position: absolute;
+    left            : 0;
+    bottom          : 0;
+    width           : 100%;
+    height          : 100%;
+    z-index         : -1;
+    border-left     : 0px solid transparent;
+    border-radius   : 1px 16px 1px 8px;
+    background      : linear-gradient(to top right, #B3E5FC25, #E1F5FE00);
+    transform       : scale(0, 1);
+    transform-origin: left top;
+    transition      : transform .8s ease, border-left .2s ease;
+}
+ul.dropdown-menu.dropdown-menu-right > li > a:not(.selected):hover::after {
+    transform: scale(1, 1);
+    border-left: 2.8px solid #fffa;
+}
+
+
+/*────────────────── Safari iOS ──────────────────*/
+/* left side menu to appear by swapping */
+.drawer .drawer-menu {
+    background             : transparent !important;
+    border                 : var(--stylus-card-border) !important;
+    box-shadow             : var(--stylus-card-box-shadow), var(--stylus-card-box-shadow-inset-light) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+}
+
+.drawer .drawer-menu ul li a span,
+.drawer .drawer-menu ul li a {
+    color: var(--page-text-color) !important;
+}
