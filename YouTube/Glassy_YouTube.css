@@ -1,0 +1,181 @@
+/* ==UserStyle==
+@name           Glassy YouTube
+@namespace      https://gist.github.com/m-atarashi
+@version        1.0.0
+@description    Custom CSS for youtube.com
+@author         m-atarashi
+==/UserStyle== */    
+
+@-moz-document url-prefix("https://www.youtube.com/") {
+    /*─────────────────────── @import ───────────────────────*/
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap'); /* Comfortaa */
+    @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap'); /* 'Zen Maru Gothic' */
+   
+    
+    /*─────────────────────── Custom Variables ───────────────────────*/
+    * {
+        --stylus-custom-bg-url: url(https://pbs.twimg.com/media/FHacS6EVEAQdLWW?format=jpg&name=large);
+        --stylus-custom-font-family: "FinalSix", 'Comfortaa', 'Zen Maru Gothic', sans-serif;
+        --stylus-custom-font-family-comment-flow: 'FinalSix', 'Comfortaa', 'Zen Maru Gothic', cursive;
+        --stylus-custom-font-weight-comment-flow: 400;
+    }
+    
+    
+    /*─────────────────────── Appearance ───────────────────────*/
+    /*───────  Color ───────*/    
+    * {
+        /* bg */
+        --yt-spec-general-background-a: transparent !important;
+        --yt-spec-general-background-b: transparent !important;
+        --yt-spec-brand-background-primary: RGBA(255, 255, 255, 0.075) !important;
+        --yt-spec-brand-background-solid: transparent !important;
+        --yt-live-chat-header-background-color: RGBA(255, 255, 255, 0.075) !important;
+        --yt-live-chat-background-color: RGBA(255, 255, 255, 0.1) !important;
+        --paper-dialog-background-color: transparent !important;
+        --paper-listbox-background-color: transparent !important;
+        --app-drawer-content-container-background-color: transparent !important;
+ 
+        /* icon & text */
+        --yt-spec-text-primary: white;
+        --yt-spec-text-secondary: #b8b8b8;
+        --yt-spec-icon-inactive: white;
+        --yt-spec-icon-active-other: white;
+        --yt-spec-brand-icon-active: white;
+        --yt-spec-brand-icon-inactive: white;
+        --yt-spec-wordmark-text: #E2421F;
+        --yt-button-icon-button-text-color: white;
+        --yt-live-chat-primary-text-color: white;
+        --yt-live-chat-secondary-text-color: RGB(220, 220, 220);
+        --yt-live-chat-banner-gradient-scrim: transparent;
+        --yt-live-chat-text-input-field-placeholder-color: RGBA(255, 255, 255, 0.7);
+    }
+    /*─────── Background Image ───────*/
+    html:not([watch-color-update]) {
+        background: center top var(--stylus-custom-bg-url);
+    }    
+    /*─────── Fonts ───────*/
+    * {
+        font-family: var(--stylus-custom-font-family) !important;
+    }
+
+    
+    /*─────────────────────── Detailed ───────────────────────*/
+    /* サイドパネルに色付け*/
+    #guide-content.ytd-app {
+        background: RGBA(255, 255, 255, 0.075);
+        backdrop-filter: blur(3px);
+    }
+    /* サイドパネルのスクロールバー改変 */
+    #contentContainer.tp-yt-app-drawer ::-webkit-scrollbar {
+        width: 6px !important;
+    }
+    #contentContainer.tp-yt-app-drawer ::-webkit-scrollbar-thumb {
+        background: RGBA(255, 255, 255, 0.15) !important;
+    }
+    
+    /* 左側のアイコンを拡大する */
+    ytd-mini-guide-renderer.ytd-app svg {
+        transform: scale(1.3) !important;
+    }
+    /* 左側のアイコン間マージンを拡大する */
+    a.ytd-mini-guide-entry-renderer {
+        margin-bottom: 6px;
+    }
+    /* 左側のアイコン下のテキスト非表示 */
+    .title.ytd-mini-guide-entry-renderer { display: none; }
+    
+    /* 上部バーの背景色 */
+    ytd-masthead {
+        --yt-spec-brand-background-primary: transparent !important;
+    }
+    /* 上部バー、選択中のカテゴリの背景を透過する */
+    yt-chip-cloud-chip-renderer[selected]{
+        --yt-spec-text-primary: RGBA(0, 0, 0, 0.1) !important;
+    }
+    
+    /* 検索ボタン非表示 */
+    #search-icon-legacy.ytd-searchbox { display: none; }
+    /* 検索ボックスの入力欄改変 */
+    #container.ytd-searchbox {
+        background: RGBA(255, 255, 255, 0.1);
+        backdrop-filter: blur(1.5px);
+        box-shadow: 0px 0px 8px 1px RGBA(0, 0, 0, 0.1);
+        border: none;
+        border-radius: 14px;
+        height: 25px;
+    }
+    /* 検索欄のフォーカス時の枠線を非表示 */
+    ytd-searchbox[has-focus] #container.ytd-searchbox {
+        background: RGBA(255, 255, 255, 0.4);
+        border: none;
+    }
+    
+    /* 概要欄下のゲーム欄に色付け */
+    ytd-rich-metadata-renderer {
+        --yt-spec-general-background-b: RGBA(0, 0, 0, 0.4) !important;
+    }
+    /* プレイリスト追加ダイアログのスクロールバー非表示 */
+    tp-yt-paper-dialog ::-webkit-scrollbar { display: none; }
+
+    
+    /*─────────────────────── Chat Column(β) ───────────────────────*/
+    /* ──────────── Chat-frame ──────────── 
+     - hide scrollbar
+     - rid border
+     - round edge
+     - apart from toggle button
+    */
+    yt-live-chat-renderer ::-webkit-scrollbar {
+        display: none;
+    }
+    ytd-live-chat-frame {
+        border: none;
+    }
+    body[dir="ltr"],
+    #chat:not([collapsed]) iframe.ytd-live-chat-frame {
+        border-radius: 18px;
+        margin-bottom: 6px;
+    }
+    /* ──────────── Toggle Button ────────────
+     - round edge
+    */
+    #show-hide-button::before,
+    #show-hide-button, #show-hide-button * {
+        border: none;
+        border-radius: 8px;
+    }
+    
+    /*──────────── Glassmorphism? ──────────── 
+     - chat frame
+    */
+    #chat:not([collapsed]) iframe.ytd-live-chat-frame {
+        backdrop-filter: blur(1.5px);
+        box-shadow: -12px 4px 32px 0px  RGBA(0, 0, 0, 0.6);
+    }
+    body[dir="ltr"] {
+        box-shadow: inset -2px 2px 12px -8px  RGBA(255, 255, 255, 0.8);
+    }
+    /* 
+     - toggle button
+    */
+    #show-hide-button {
+        position: relative;
+        backdrop-filter: blur(1.5px);
+        box-shadow: -2px 3px 4px 0px RGBA(0, 0, 0, 0.35); 
+    }
+    #show-hide-button::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-top: 1px solid RGBA(255, 255, 255, 0.1);
+        box-shadow: inset -1px 1px 8px -6px RGBA(255, 255, 255, 1); 
+        z-index: -1;
+    }
+    
+    /* youtube-comment-flow */
+    div.ylcf-flow-message span {
+        font-family: var(--stylus-custom-font-family-comment-flow) !important;
+        font-weight: var(--stylus-custom-font-weight-comment-flow) !important;
+    }
+}
