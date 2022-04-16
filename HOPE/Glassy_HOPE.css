@@ -1,0 +1,480 @@
+/* ==UserStyle==
+@name           La+HOPE
+@namespace      https://github.com/m-atarashi/UserStyle-Zoo/HOPE
+@version        1.0.0
+@description    Glassy style of hope.fun.ac.jp.
+@author         m-atarashi
+==/UserStyle== */
+
+@-moz-document url-prefix("https://hope.fun.ac.jp") {
+/* 最後の方面倒になってコピペ＆ハードコーディング乱用するの気持ちよすぎて止められねぇ…… */
+/* ────────────────────────────────────────────── */
+    /* sans-serif */
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+
+/* ────────────────────────────────────────────── */
+    :root {
+        --custom-primary-color          : #ffffff;
+        --custom-secondary-color        : #ffffffa8;
+        --custom-glassy_border          : 1px solid #ffffff28;
+        --custom-glassy_box-shadow      : 0 0 8px #00000038;
+        --custom-glassy_box-shadow-inset: inset 0 0 1px 0px #000;
+        
+        --custom_font-family: Comfortaa, "Zen Maru Gothic", sans-serif;
+        --custom-bg-img     : url("your image";
+        
+        --custom-header_bg-color       : transparent;
+        --custom-header_backdrop-filter: blur(8px);
+        --custom-header_color          : var(--custom-primary-color);
+        
+        --custom-card_bg-color              : transparent;
+        --custom-card_backdrop-filter       : blur(6px);
+        --custom-card_color                 : var(--custom-primary-color);
+        --custom-card_border                : var(--custom-glassy_border);
+        --custom-card_border-rad            : 16px;
+        --custom-card_box-shadow            : var(--custom-glassy_box-shadow);
+        --custom-card_box-shadow-inset-light: var(--custom-glassy_box-shadow-inset);
+
+        
+        --custom-dropdown-menu_bg-color       : transparent;
+        --custom-dropdown-menu_border-rad     : 8px;
+        --custom-myoverview-dropdown-menu_backdrop-filter: blur(8px);
+        
+        --custom-nav-drawer_bg-color       : transparent;
+        --custom-nav-drawer_backdrop-filter: blur(8px);
+        --custom-nav-drawer_color          : var(--custom-primary-color);
+    }
+    
+/* ────────────────────────────────────────────── */
+/* whole */
+    /* .fa indicates FontAwesome */
+    html *:not(.fa) {
+        font-family: var(--custom_font-family) !important;
+    }
+    
+    body::-webkit-scrollbar {
+        display: none !important;
+    }
+    
+    body {
+        background     : var(--custom-bg-img) left top !important;
+        background-size: 100% auto !important;
+    }
+
+/* ───────────────────────────── */
+/* ログアウトした状態で見えるページ */
+    #page-local-hope-login .auth,
+    #page-site-index input[aria-label="コースを検索する"] {
+        background-color: transparent !important;
+        border          : var(--custom-glassy_border) !important;
+        border-radius   : 8px !important;
+        box-shadow      : var(--custom-glassy_box-shadow), var(--custom-glassy_box-shadow-inset) !important;  
+    }
+    
+    #page-local-hope-login .authname > a:hover {
+        text-decoration: none !important
+    }
+    #page-local-hope-login .authname > a:focus {
+        display: none !important;
+    }
+    #page-local-hope-login .authname > a::after {
+        content         : '';
+        position        : relative;
+        display         : block;
+        bottom          : 2px;
+        left            : 10%;
+        width           : 90%;
+        height          : 1.2px;
+        background      : var(--blue);
+        transform-origin: center top;
+        transform       : scale(0, 1);
+        transition      : transform 1.2s 75ms ease-in-out;
+    }
+    #page-local-hope-login .authname > a:hover::after {
+        transform: scale(1, 1);
+    }
+    
+/* ───────────────────────────── */
+/* header */
+    .simplesearchform .collapse.show, .simplesearchform .collapsing,
+    .bg-white {
+        background-color: var(--custom-header_bg-color) !important;
+        backdrop-filter : var(--custom-header_backdrop-filter) !important;
+    }
+    .bg-white * {
+        color: var(--custom-header_color) !important;
+    }
+    /* revise the color of username link*/
+    .bg-white .usermenu a,
+    .bg-white .usertext {
+        color: var(--blue) !important;
+    }
+    
+    /* when searching */
+    .form-inline .input-group * {
+        background: transparent !important
+    }
+    .form-inline .input-group {
+        right: 4rem;
+    }
+    .simplesearchform .btn-close {
+        right: 0rem !important;
+    }
+    .input-group-append {
+        display: none !important;
+    }
+
+    /* hamburger drawer button */
+    [data-region="drawer-toggle"] > button:focus,   
+    [data-region="drawer-toggle"] > button:hover,   
+    [data-region="drawer-toggle"] > button {
+        background-color: transparent !important;
+        border          : var(--custom-glassy_border) !important;
+        border-radius   : 8px !important;
+        box-shadow      : var(--custom-glassy_box-shadow), var(--custom-glassy_box-shadow-inset) !important;
+    }
+    
+    /* hvoerするとまわる */
+    [data-region="drawer-toggle"] > button > i:hover {
+        transform : rotate(90deg) !important;
+        transition: transform .6s 75ms ease-out !important;
+    }
+    [data-region="drawer-toggle"] > button > i {
+        transition: transform .9s 75ms ease-out !important;
+    }
+    
+    
+    /* hamburger drawer */
+    #nav-drawer::-webkit-scrollbar {
+        display: none !important;
+    }
+    /* before要素作るのめんどいときはbox-shadowに複数の値を指定してしまう*/
+    #nav-drawer {
+        background-color       : var(--custom-nav-drawer_bg-color) !important;
+        backdrop-filter        : var(--custom-nav-drawer_backdrop-filter) !important;
+        -webkit-backdrop-filter: var(--custom-nav-drawer_backdrop-filter) !important;
+        border-right           : var(--custom-glassy_border) !important;
+        box-shadow             : var(--custom-glassy_box-shadow), var(--custom-glassy_box-shadow-inset) !important;
+    }
+    /* items in the hamburger drawer */
+    #nav-drawer .list-group-item {
+        background-color: var(--custom-nav-drawer_bg-color) !important;
+        color           : var(--custom-nav-drawer_color) !important;
+        border          : none !important;
+    }
+    
+    /* hoverしたときに下線出るトランジション */
+    #nav-drawer .list-group-item .media-body::after {
+        content         : '';
+        position        : absolute;
+        bottom          : 6px;
+        left            : 5%;
+        width           : 80%;
+        height          : 1.2px;
+        background      : var(--custom-secondary-color);
+        transform-origin: center top;
+        transform       : scale(0, 1);
+        transition      : transform 1s 75ms ease;
+    }
+    #nav-drawer .list-group-item .media-body:hover::after {
+        transform-origin: left top;
+        transform: scale(1, 1);
+    }
+    
+    /* 通知ドローワー */
+    .popover-region-footer-container,
+    .popover-region-container {
+        background   : transparent !important;
+        color        : var(--custom-primary-color) !important;
+        border       : var(--custom-glassy_border) !important;
+        border-radius: 8px !important;
+        box-shadow   : var(--custom-glassy_box-shadow), var(--custom-glassy_box-shadow-inset) !important;  
+    }
+    
+    /* メッセージアイコン押したら右からフェードインしてくるサイドパネル */
+    .message-app .list-group-item,
+    [data-region="right-hand-drawer"] > .message-app {
+        background   : transparent !important;
+        color        : var(--custom-primary-color) !important;
+        border       : var(--custom-glassy_border) !important;
+        border-radius: 8px !important;
+        box-shadow   : var(--custom-glassy_box-shadow), var(--custom-glassy_box-shadow-inset) !important;  
+    }
+    .border-bottom,
+    [data-region="view-overview"]  {
+        border: none !important;
+    }
+        
+    /* 右上のプロフィール画像から出現するドロップダウンメニュー */
+    .navbar.fixed-top .dropdown .dropdown-menu {
+        background-color: transparent !important;
+        border          : none !important;
+        border-radius   : var(--custom-dropdown-menu_border-rad) !important;
+        overflow-y      : visible !important;
+    }
+    .navbar.fixed-top .dropdown .dropdown-menu::before {
+        content      : "";
+        position     : absolute;
+        z-index      : -1;
+        width        : 100%;
+        height       : 100%;
+        border       : var(--custom-card_border);
+        border-radius: var(--custom-card_border-rad);
+        box-shadow   : var(--custom-card_box-shadow-inset-light);  
+    }
+    
+/* ───────────────────────────── */
+/* when header is open */   
+    /* make the hamburger drawer floating when opened*/
+    body.drawer-open-left {
+        margin-left: 0 !important;
+    }
+    @media (min-width: 576px) {
+        #region-main.has-blocks .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card,
+        body.drawer-open-left .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+            width: calc(50% - 0.5rem) !important;
+        } 
+    }
+    @media (min-width: 861px) {
+        #region-main.has-blocks .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card,
+        body.drawer-open-left .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+            width: calc(33.33% - 0.5rem) !important;
+        } 
+    }
+    @media (min-width: 1100px) {
+        #region-main.has-blocks .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card,
+        body.drawer-open-left .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+            width: calc(25% - 0.5rem) !important;
+        } 
+    }
+     @media (min-width: 1200px) {
+        #region-main.has-blocks .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card,
+        body.drawer-open-left .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+            width: calc(33.33% - 0.5rem) !important;
+        } 
+    }
+     @media (min-width: 1400px) {
+        #region-main.has-blocks .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card,
+        body.drawer-open-left .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+            width: calc(25% - 0.5rem) !important;
+        } 
+    }
+/* ───────────────────────────── */
+    #page-header .btn-secondary {
+        background   : transparent !important;
+        color        : var(--custom-primary-color) !important;
+        border       : var(--custom-glassy_border) !important;
+        border-radius: 8px !important;
+        box-shadow   : var(--custom-glassy_box-shadow), var(--custom-glassy_box-shadow-inset) !important;
+    }
+    
+/* ───────────────────────────── */
+/* footer */
+    #page-wrapper #page-footer {
+        display: none !important;
+    }
+    
+/* ───────────────────────────── */
+/* コース概要　*/
+    .block_myoverview .text-muted {
+        color: var(--custom-secondary-color) !important;
+    }
+    
+    /* color of sort selections */
+    .block_myoverview .btn-outline-secondary {
+        background  : transparent !important;
+        color       : var(--custom-primary-color) !important;
+        border          : var(--custom-glassy_border) !important;
+        border-radius   : 8px !important;
+        box-shadow      : var(--custom-glassy_box-shadow), var(--custom-glassy_box-shadow-inset) !important;
+    }
+    
+    .dropdown-item {
+        color: var(--custom-primary-color) !important;
+    }
+    .dropdown-menu.show {
+        border          : var(--custom-glassy_border) !important;
+        border-radius   : 8px !important;
+        box-shadow      : var(--custom-glassy_box-shadow), var(--custom-glassy_box-shadow-inset) !important;
+        backdrop-filter : blur(24px) !important
+    }
+    
+    /* 「このコースの星を外す」ポップアップ */
+    .block_myoverview .dropdown-menu {
+        background-color       : transparent !important;
+        backdrop-filter        : var(--custom-myoverview-dropdown-menu_backdrop-filter) !important;
+        -webkit-backdrop-filter: var(--custom-myoverview-dropdown-menu_backdrop-filter) !important;  
+    }
+    .block_myoverview .dropdown-menu.dropdown-menu-right .dropdown-item *, 
+    .block_myoverview .dropdown-menu.dropdown-menu-right .dropdown-item {
+        color: var(--custom-secondary-color) !important;
+    }
+    
+    /* fine-tuning */
+    .block_myoverview .dashboard-card-deck .dashboard-card .dashboard-card-img {
+        border-radius: var(--custom-card_border-rad) var(--custom-card_border-rad) 0 0 !important;
+        transform    : scale(0.989) !important;
+        margin-top   : 2px !important;
+    }
+    
+    /* コースタイトル下線ホバーアクション */
+    .block_myoverview .coursename:hover {
+        text-decoration: none !important;
+    }
+    .block_myoverview .coursename::after {
+        content         : '';
+        position        : absolute;
+        bottom          : 10px;
+        left            : 5%;
+        width           : 80%;
+        height          : 1.2px;
+        background      : var(--custom-secondary-color);
+        transform-origin: center top;
+        transform       : scale(0, 1);
+        transition      : transform 1s 75ms ease;
+    }
+    .block_myoverview .coursename:hover::after {
+        transform-origin: left top;
+        transform       : scale(1, 1);
+    }
+
+/* ───────────────────────────── */
+/* 最近アクセスされたコース */
+    .block_recentlyaccessedcourses .pagination * {
+        background-color: transparent !important;
+    }
+    .block_recentlyaccessedcourses .page-link {
+        margin-left     : 4px !important;
+        border          : var(--custom-glassy_border) !important;
+        border-radius   : 8px !important;
+        box-shadow      : var(--custom-glassy_box-shadow), var(--custom-glassy_box-shadow-inset) !important;
+    }
+    
+    /* fine-tuning */
+    .block_recentlyaccessedcourses .dashboard-card-deck .dashboard-card .dashboard-card-img {
+        position: relative !important;
+        border-radius: var(--custom-card_border-rad) var(--custom-card_border-rad) 0 0 !important;
+        transform    : scale(0.989) !important;
+        margin       : 2px 1px 0px 1px !important;
+    }
+
+    /* コースタイトル下線ホバーアクション */
+    .block_recentlyaccessedcourses .coursename:hover {
+        text-decoration: none !important;
+    }
+    .block_recentlyaccessedcourses .coursename::after {
+        content         : '';
+        position        : absolute;
+        bottom          : 10px;
+        left            : 5%;
+        width           : 80%;
+        height          : 1.2px;
+        background      : var(--custom-secondary-color);
+        transform-origin: center top;
+        transform       : scale(0, 1);
+        transition      : transform 1s 75ms ease;
+    }
+    .block_recentlyaccessedcourses .coursename:hover::after {
+        transform       : scale(1, 1);
+    }
+    
+    
+/* ───────────────────────────── */
+/* タイムライン */
+    .block_timeline.block .dropdown-menu,
+    .block_timeline.block .list-group-item {
+        background-color: transparent !important;
+        backdrop-filter : blur(8px) !important;
+        border          : var(--custom-glassy_border) !important;
+        border-radius   : 13px !important;
+        box-shadow      : var(--custom-glassy_box-shadow), var(--custom-glassy_box-shadow-inset) !important;
+        padding         : 0.5rem !important;
+    }
+    
+    .block_timeline.block .dropdown-menu * {
+        color: var(--custom-primary-color) !important;
+    }
+    .block_timeline.block .list-group-item-action {
+        color: var(--custom-secondary-color) !important;
+    }
+    
+    .btn-outline-secondary {
+        background   : transparent !important;
+        color        : var(--custom-secondary-color) !important;
+        border       : var(--custom-glassy_border) !important;
+        border-radius: 8px !important;
+        box-shadow   : var(--custom-glassy_box-shadow), var(--custom-glassy_box-shadow-inset) !important;
+    }
+/* ───────────────────────────── */
+/* anything blocks */
+    #region-main,
+    .card {
+        position               : relative !important;
+        background-color       : var(--custom-card_bg-color) !important;
+        backdrop-filter        : var(--custom-card_backdrop-filter) !important;
+        -webkit-backdrop-filter: var(--custom-card_backdrop-filter) !important;
+        color                  : var(--custom-card_color) !important;
+        border                 : none !important;
+        border-radius          : var(--custom-card_border-rad) !important;
+        box-shadow             : var(--custom-card_box-shadow) !important;
+    }
+    .card::before {
+        content      : "";
+        position     : absolute;
+        z-index      : -1;
+        width        : 100%;
+        height       : 100%;
+        border       : var(--custom-card_border);
+        border-radius: var(--custom-card_border-rad);
+        box-shadow   : var(--custom-card_box-shadow-inset-light);
+    }
+    
+    /* fine-tuning */
+    .region_main_settings_menu_proxy {
+        background-color: transparent !important;
+    }
+    
+    #region-main {
+        overflow: visible;
+    }
+    #region-main::before {
+        content      : "";
+        position     : absolute;
+        z-index      : -1;
+        width        : 100%;
+        height       : 100%;
+        left         : 0;
+        top          : 0;
+        border       : var(--custom-card_border);
+        border-radius: var(--custom-card_border-rad);
+        box-shadow   : var(--custom-card_box-shadow-inset-light);
+    }
+    
+    /* fine-tuning */
+    @media (min-width: 1199.99px) {
+        #region-main.has-blocks::before {
+            display: none;
+        }
+        #region-main.has-blocks {
+            border                 : none !important;
+            box-shadow             : none !important;
+            backdrop-filter        : none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+    }
+    
+    #region-main table * {
+        border-color: #ffffff4f !important
+    }　
+
+/* ───────────────────────────── */
+/* ohters */
+    input[aria-label="コースを検索する"] {
+        color       : var(--custom-primary-color) !important;
+        border-color: var(--custom-primary-color) !important;
+    }
+    input[aria-label="コースを検索する"]::placeholder {
+        color: var(--custom-secondary-color) !important;
+    }
+}
