@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           La+HOPE
-@namespace      https://github.com/m-atarashi/UserStyle-Zoo/HOPE
+@namespace      https://github.com/m-atarashi/UserStyle-Zoo/Glassy_HOPE
 @version        1.0.0
 @description    Glassy style of hope.fun.ac.jp.
 @author         m-atarashi
@@ -15,14 +15,15 @@
 
 /* ────────────────────────────────────────────── */
     :root {
-        --custom-primary-color          : #ffffff;
+        /* dark mode #24140ecf */
+        --custom-primary-color          : #fff;
         --custom-secondary-color        : #ffffffa8;
         --custom-glassy_border          : 1px solid #ffffff28;
         --custom-glassy_box-shadow      : 0 0 8px #00000038;
         --custom-glassy_box-shadow-inset: inset 0 0 1px 0px #000;
         
         --custom_font-family: Comfortaa, "Zen Maru Gothic", sans-serif;
-        --custom-bg-img     : url("your image";
+        --custom-bg-img     : url("your image");
         
         --custom-header_bg-color       : transparent;
         --custom-header_backdrop-filter: blur(8px);
@@ -349,6 +350,9 @@
         border          : var(--custom-glassy_border) !important;
         border-radius   : 8px !important;
         box-shadow      : var(--custom-glassy_box-shadow), var(--custom-glassy_box-shadow-inset) !important;
+    }
+    .block_recentlyaccessedcourses .text-muted {
+        color: var(--custom-secondary-color) !important;
     }
     
     /* fine-tuning */
