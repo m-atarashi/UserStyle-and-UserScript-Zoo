@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Scrapbox Backgound Slideshow
-// @namespace    https://github.com/m-atarashi/UserStyle-Zoo/Scrapbox
+// @namespace    https://github.com/m-atarashi/UserStyle-Zoo/tree/main/Scrapbox
 // @version      1.0
 // @description  An implementation of background image slideshow on scrapbox.io.
 // @author       m-atarashi
