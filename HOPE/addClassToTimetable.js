@@ -45,7 +45,12 @@
         }, 100, 5000);
     }
 
-    addClassToTimetable(1, 2, 'ラボミーティング', 'https://scrapbox.io/imlab2021/');
-    addClassToTimetable(2, 6, 'GCI 2022 Summer', 'https://edu.omnicamp.us/');
+    /* examples */
+    addClassToTimetable(1, 1, '朝活', 'https://example.com/');
+    addClassToTimetable(1, 6, '残業', 'https://example.com/');
+    addClassToTimetable(2, 6, '残業', 'https://example.com/');
+    addClassToTimetable(3, 6, '残業', 'https://example.com/');
+    addClassToTimetable(4, 6, '残業', 'https://example.com/');
+    addClassToTimetable(5, 6, '残業', 'https://example.com/');
 })();
 
