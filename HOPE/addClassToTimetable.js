@@ -2,7 +2,7 @@
 // @name         HOPE TIMETABLE ADD
 // @namespace    https://github.com/m-atarashi/UserStyle-Zoo/tree/main/HOPE
 // @version      0.1
-// @description  Add custom classes to hope timetable.
+// @description  Add custom classes to hope timetable for https://github.com/Better-HOPE/timetable-for-hope by https://github.com/cathiecode.
 // @author       m-atarashi
 // @match        https://hope.fun.ac.jp/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=fun.ac.jp
