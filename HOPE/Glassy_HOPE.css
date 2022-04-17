@@ -6,6 +6,12 @@
 @author         m-atarashi
 ==/UserStyle== */
 
+/*
+ default image: https://photos.google.com/share/AF1QipNi8VN2pw2Ya_xCV8eFgzEZmiXDy1-GwhXbqFtvXoH3HypF10as9puV8FdoVZpOZA/photo/AF1QipNfIUeTNJZ838fqQxynmk4USpsZSml058bNKbCP?key=WkZjQTIxQTM5a01oZkNUYTE2ZllKTVJKZk1CMTR3
+ from iOS Wallpapers(https://goo.gl/photos/ZVpabTtcezd35XBa9)
+
+*/
+
 @-moz-document url-prefix("https://hope.fun.ac.jp") {
 /* 最後の方面倒になってコピペ＆ハードコーディング乱用するの気持ちよすぎて止められねぇ…… */
 /* ────────────────────────────────────────────────────────────── */
@@ -15,16 +21,16 @@
 
 /* ────────────────────────────────────────────────────────────── */
     :root {
-        /* dark mode #24140ecf */
-        --custom-primary-color          : #fff;
-        --custom-secondary-color        : #ffffffa8;
-        --custom-dark-color             : #24140ecf;
+        /* dark mode #24140e */
+        --custom-dark-color             : #24140e;
+        --custom-primary-color          : #24140e;
+        --custom-secondary-color        : #24140ea8;
         --custom-glassy_border          : 1px solid #eeeeee18;
         --custom-glassy_box-shadow      : 0 0 8px #00000038;
         --custom-glassy_box-shadow-inset: inset 0 0 1px 0px #000;
         
         --custom_font-family: Comfortaa, "Zen Maru Gothic", sans-serif;
-        --custom-bg-img     : url(https://i.gyazo.com/b6a55c8bd89da8dd2c4d9358c00e2ff3.png);
+        --custom-bg-img     : url(https://lh3.googleusercontent.com/pw/AM-JKLXQ8rXDDJ1zJc0fJg4g0kVHz89b-iSgwAtQxxRKf0ndG1PmP6IuR8CgNkCP-UESXiUwQrQ2FVEVUUBUFbrt13ijOCtklX89AVzFSMU8X9q0sOWPHjphRiG6di1_4Z3Dl5uniTrb660c2Dy3nSeWvcoZ=w1920-no-tmp.jpg);
         
         --custom-header_bg-color       : transparent;
         --custom-header_backdrop-filter: blur(8px);
@@ -227,7 +233,7 @@
         border          : none !important;
     }
     
-    /* フォーカス時に出現する青い枠線を非表示にする。たぶんドロワー以外にも適用されてしまっているけれど何も見てないしなにも聞いてない */
+    /* フォーカス時に出現する青い枠線を非表示にする。たぶんドロワー以外にも適用されてるけど何も見てないしなにも聞いてない */
     .aabtn.focus, .aabtn:focus, .btn-link.focus, .btn-link:focus, .nav-link.focus, .nav-link:focus, .editor_atto_toolbar button.focus, .editor_atto_toolbar button:focus, [role="button"].focus, [role="button"]:focus, .list-group-item-action.focus, .list-group-item-action:focus, input[type="checkbox"].focus, input[type="checkbox"]:focus, input[type="radio"].focus, input[type="radio"]:focus, input[type="file"].focus, input[type="file"]:focus, input[type="image"].focus, input[type="image"]:focus, .sr-only-focusable.focus, .sr-only-focusable:focus, a.dropdown-toggle.focus, a.dropdown-toggle:focus, .modal-dialog[tabindex="0"].focus, .modal-dialog[tabindex="0"]:focus, .moodle-dialogue-base .closebutton.focus, .moodle-dialogue-base .closebutton:focus, button.close.focus, button.close:focus, .form-autocomplete-selection.focus, .form-autocomplete-selection:focus, [role="treeitem"]:not([aria-expanded="true"]).focus, [role="treeitem"]:not([aria-expanded="true"]):focus {
         box-shadow: none !important;
     }
@@ -394,7 +400,7 @@
         border-radius: var(--custom-card_border-rad) var(--custom-card_border-rad) 0 0 !important;
         transform    : scale(0.989) !important;
         margin-top   : 2px !important;
-    }
+    }    
     
     /* コースタイトル下線ホバーアクション */
     .block_myoverview .coursename:hover {
@@ -488,10 +494,10 @@
         box-shadow   : var(--custom-glassy_box-shadow), var(--custom-glassy_box-shadow-inset) !important;
     }
 
-
-/* ───────────────────────────── */
+/* ───────────────────────────────────── */
+/* コースページ */
     /* 歯車アイコンから出現するポップアップ（具体的には「XXXから登録を解除する」）について、背景色、文字色を変更 */
-    .context-header-settings-menu .dropdown-menu {
+    .dropdown-menu {
         background: transparent !important;
     }
     .context-header-settings-menu .dropdown-item a {
@@ -503,7 +509,13 @@
         box-shadow: none !important;
     }
     
-    /* 参加者 */
+    /* 「トピックn」間の線 */
+    .course-content ul li.section.main {
+        border-bottom: 1px solid #ffffff3f
+    }
+    
+/* ───────────────────────────────────── */
+/* 参加者 */
     #page-course-view-topics.path-user #region-main .filter-group .btn-primary,  /* 「フィルタを適用する」ボタン */
     #page-course-view-topics.path-user #region-main .filter-group .btn-secondary, /* 「フィルタをクリアする」ボタン */
     #page-course-view-topics.path-user #region-main .filter-group .form-autocomplete-suggestions, /* 次の期間以上活動していない */
