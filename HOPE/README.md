@@ -14,7 +14,7 @@
 
 ## addClassToTimetable.js
 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=ja "Tampermonkey")に導入することで、未来大の時間割に含まれない任意の授業を時間割に追加することができます。
-例えば、上の画像における月曜2限「ラボミーティング」、火曜6限「GCI 2022 Summer」などが追加された授業に相当します。
+例えば、上の画像における月曜2限「ラボミーティング」、火曜6限「GCI 2022 Summer」が追加された授業に相当します。
 
 ## Acknowledgement
 Stylus 提供元の [stylus.openstyles](https://add0n.com/stylus.html "stylus.openstyles") 様、Tampermonkey 開発者の [Jan Biniok](https://github.com/derjanb "Jan Biniok") 氏、[TimeTable for HOPE](https://github.com/Better-HOPE/timetable-for-hope "TimeTable for HOPE") 開発者の [cathiecode](https://github.com/cathiecode "cathiecode") 氏に感謝申し上げます。
