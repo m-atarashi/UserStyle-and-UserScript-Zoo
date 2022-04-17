@@ -14,7 +14,7 @@
     
     /*─────────────────────── Custom Variables ───────────────────────*/
     * {
-        --stylus-custom-bg-url: url(https://pbs.twimg.com/media/FHacS6EVEAQdLWW?format=jpg&name=large);
+        --stylus-custom-bg-url: url("your image");
         --stylus-custom-font-family: "FinalSix", 'Comfortaa', 'Zen Maru Gothic', sans-serif;
         --stylus-custom-font-family-comment-flow: 'FinalSix', 'Comfortaa', 'Zen Maru Gothic', cursive;
         --stylus-custom-font-weight-comment-flow: 400;
