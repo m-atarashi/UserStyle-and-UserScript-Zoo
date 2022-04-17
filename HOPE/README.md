@@ -21,7 +21,7 @@ Stylus 提供元の [stylus.openstyles](https://add0n.com/stylus.html "stylus.op
 
 最後に、いつも私を支えてくださっているラプラス・ダークネス氏ことラプ様にも感謝申し上げますW
 
-- 公式ウェブサイト：[ラプラス・ダークネス | 所属タレント一覧 | hololive（ホロライブ）公式サイト](https://hololive.hololivepro.com/talents/la-darknesss "ラプラス・ダークネス | 所属タレント一覧 | hololive（ホロライブ）公式サイト")
+- ラプ様の公式サイト：[ラプラス・ダークネス | 所属タレント一覧 | hololive（ホロライブ）公式サイト](https://hololive.hololivepro.com/talents/la-darknesss "ラプラス・ダークネス | 所属タレント一覧 | hololive（ホロライブ）公式サイト")
 - ラプ様のYouTubeチャンネル：[Laplus ch. ラプラス・ダークネス - holoX -](https://www.youtube.com/channel/UCENwRMx5Yh42zWpzURebzTw "Laplus ch. ラプラス・ダークネス - holoX -")
 - ラプ様のTwitter：[@LaplusDarknesss](https://twitter.com/LaplusDarknesss "@LaplusDarknesss")
 - 記念すべきラプ様の初配信（2021/11/26）
