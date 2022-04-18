@@ -28,7 +28,7 @@
     textarea[lang="en-EN"] + .lmt__source_textarea_overlay .lmt__source_textarea_overlay__sentence--active,
     textarea[lang="en-EN"] + .lmt__source_textarea_overlay .lmt__source_textarea_overlay__text {
         font-family: 'Zen Maru Gothic', sans-serif !important;
-        font-size: 20px !important;
+        font-size: 18px !important;
     }
 
     .lmt--web .lmt__source_textarea {
