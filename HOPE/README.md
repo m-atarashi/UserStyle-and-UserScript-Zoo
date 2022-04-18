@@ -13,7 +13,7 @@
 背景画像の変更によってデフォルトの文字色（#24140e）の可読性が損なわれる場合があります。その際、`--custom-primary-color`カスタムプロパティおよび`--custom-secondary-color`カスタムプロパティを白系統色に変更することを推奨します。
 
 ## addClassToTimetable.js
-[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=ja "Tampermonkey")に導入することで、未来大の時間割に含まれない任意の授業を時間割テーブルに追加することができます。
+[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=ja "Tampermonkey")に導入することで、未来大の時間割に含まれない任意の授業を[TimeTable for HOPE](https://github.com/Better-HOPE/timetable-for-hope "TimeTable for HOPE")の時間割テーブルに追加することができます。
 例えば、上の画像における月曜2限「ラボミーティング」、火曜6限「GCI 2022 Summer」が追加された授業に相当します。
 
 ## Acknowledgement
