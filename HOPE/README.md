@@ -3,9 +3,6 @@
 ![glassy_hope02](https://user-images.githubusercontent.com/67362239/163711209-d5ad2145-b28b-4a2d-a45b-5258cb9e8f68.png)
 ![glassy_hope03](https://user-images.githubusercontent.com/67362239/163711212-e0989458-80ed-490e-9390-d613f2b23fa1.png)
 
-
-
-
 ## glassy-hope.css
 [Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=ja "Stylus")にUserCSSとして導入することで、HOPEのUIが透明感のある美しい外観に変わります。
 
@@ -15,6 +12,12 @@
 ## add-class-to-timetable.js
 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=ja "Tampermonkey")に導入することで、未来大の時間割に含まれない任意の授業を[TimeTable for HOPE](https://github.com/Better-HOPE/timetable-for-hope "TimeTable for HOPE")の時間割テーブルに追加することができます。
 例えば、上の画像における月曜2限「ラボミーティング」、火曜6限「GCI 2022 Summer」が追加された授業に相当します。
+
+## redirect-to-ssofunjpac.js
+HOPEのホームページ(hope.fun.ac.jp)にログアウトした状態でアクセスすると、ログイン画面（sso.fun.ac.jp）に自動で遷移します。
+
+## auto-login-to-ssofunacjp.js
+HOPEに自動でログインします。
 
 ## Acknowledgement
 Stylus 提供元の [stylus.openstyles](https://add0n.com/stylus.html "stylus.openstyles") 様、Tampermonkey 開発者の [Jan Biniok](https://github.com/derjanb "Jan Biniok") 氏、[TimeTable for HOPE](https://github.com/Better-HOPE/timetable-for-hope "TimeTable for HOPE") 開発者の [cathiecode](https://github.com/cathiecode "cathiecode") 氏に感謝申し上げます。
