@@ -6,7 +6,7 @@
 
 
 
-## glassy_hope.css
+## glassy-hope.css
 [Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=ja "Stylus")にUserCSSとして導入することで、HOPEのUIが透明感のある美しい外観に変わります。
 
 `--custom-bg-img`カスタムプロパティをWeb上の任意の画像URLに変更することで、背景をお好きな画像に設定することができます。
