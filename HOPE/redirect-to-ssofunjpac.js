@@ -10,9 +10,9 @@
 // ==/UserScript==
 
 (function() {
-    'use strict';
-    const regex = /^https:\/\/hope\.fun\.ac\.jp\/(local\/hope\/login.php.*)?$/;
+    'use strict'
+    const regex = /^https:\/\/hope\.fun\.ac\.jp\/(local\/hope\/login.php.*)?$/
     if(regex.test(location.href)){
-        location.href = "https://hope.fun.ac.jp/auth/saml2/login.php?idp=1bec319bca7458548c77d545a2a1b3de";
+        location.href = "https://hope.fun.ac.jp/auth/saml2/login.php?idp=1bec319bca7458548c77d545a2a1b3de"
     }
-})();
+})()
