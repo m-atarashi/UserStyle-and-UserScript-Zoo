@@ -10,5 +10,5 @@
 // ==/UserScript==
 
 (function() {
-   setTimeout(() => document.querySelector(`#auth_form`).submit(), 1000);
-})();
+   setTimeout(() => document.querySelector(`#auth_form`).submit(), 1000)
+})()
