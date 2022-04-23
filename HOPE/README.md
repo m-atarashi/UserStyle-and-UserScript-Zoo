@@ -6,13 +6,13 @@
 
 
 
-## Glassy_HOPE.css
+## glassy_hope.css
 [Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=ja "Stylus")にUserCSSとして導入することで、HOPEのUIが透明感のある美しい外観に変わります。
 
 `--custom-bg-img`カスタムプロパティをWeb上の任意の画像URLに変更することで、背景をお好きな画像に設定することができます。
 背景画像の変更によってデフォルトの文字色（#24140e）の可読性が損なわれる場合があります。その際、`--custom-primary-color`カスタムプロパティおよび`--custom-secondary-color`カスタムプロパティを白系統色に変更することを推奨します。
 
-## addClassToTimetable.js
+## add-class-to-timetable.js
 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=ja "Tampermonkey")に導入することで、未来大の時間割に含まれない任意の授業を[TimeTable for HOPE](https://github.com/Better-HOPE/timetable-for-hope "TimeTable for HOPE")の時間割テーブルに追加することができます。
 例えば、上の画像における月曜2限「ラボミーティング」、火曜6限「GCI 2022 Summer」が追加された授業に相当します。
 
