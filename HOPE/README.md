@@ -17,7 +17,7 @@
 HOPEのホームページ(hope.fun.ac.jp)にログアウトした状態でアクセスすると、ログイン画面（sso.fun.ac.jp）に自動で遷移します。
 
 ## auto-login-to-ssofunacjp.js
-HOPEに自動でログインします。
+HOPEに自動でログインし、HOPEのマイページ（hope.fun.ac.jp/my）に遷移します。
 
 ## Acknowledgement
 Stylus 提供元の [stylus.openstyles](https://add0n.com/stylus.html "stylus.openstyles") 様、Tampermonkey 開発者の [Jan Biniok](https://github.com/derjanb "Jan Biniok") 氏、[TimeTable for HOPE](https://github.com/Better-HOPE/timetable-for-hope "TimeTable for HOPE") 開発者の [cathiecode](https://github.com/cathiecode "cathiecode") 氏に感謝申し上げます。
