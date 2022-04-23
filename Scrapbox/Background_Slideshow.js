@@ -10,7 +10,7 @@
 // ==/UserScript==
 
 (function() {
-    'use strict';
+    'use strict'
 
     // image files of Twiter, Gyazo, Google Photo and etc. are available. Pixiv is not so.
     const BG_URLS = [
@@ -29,22 +29,9 @@
     const change_bg = url => document.querySelector(`:root`).style.setProperty(`--stylus-bg-url`, `url(${url})`)
 
     let img = new Image()
+    img.src = get_bg_url_rand(BG_URLS)
     setInterval(() => {
         change_bg(img.src)
         img.src = get_bg_url_rand(BG_URLS)
     }, BG_INTERVAL)
-})();
-
-
-// GyazoのコレクションのBG_URLSを出力する関数
-// コレクションのページを開き、ブラウザのコンソールで実行する
-/*
-(function() {
-const url_stems = Array.from(document.querySelector(".images-grid-view").getElementsByClassName("view-operation")).map(e => `https://i.gyazo.com${e.attributes.href.textContent}`);
-const exts = Array.from(document.querySelector(".images-grid-view").getElementsByClassName("thumb loaded")).map(e => e.attributes.src.textContent.slice(-7,-4));
-const urls = url_stems.map((e, i) =>`${e}.${exts[i]}`);
-const titles = Array.from(document.querySelector(".images-grid-view").getElementsByClassName("metadata")).map(e => e.innerHTML);
-const bgs = urls.map((e, i) => `{"url": "${e}", "description": "${titles[i]}"}`);
-console.log(bgs);
 })()
-*/
