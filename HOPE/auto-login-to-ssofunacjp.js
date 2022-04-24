@@ -26,7 +26,7 @@
         await waitOnInputCompleted(usernameElement, 100)
         await waitOnInputCompleted(passwordElement, 100)
 
-        const submitElement = authFormElement.querySelector('[type="submit"]', authFormElement)
+        const submitElement = authFormElement.querySelector('[type="submit"]')
         authFormElement.submit()
     }
 
