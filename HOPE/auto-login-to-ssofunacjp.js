@@ -23,8 +23,10 @@
         const authFormElement = document.querySelector('#auth_form')
         const usernameElement = authFormElement.querySelector('[name="username"]')
         const passwordElement = authFormElement.querySelector('[name="password"]')
+        
         await waitOnInputCompleted(usernameElement, 100)
         await waitOnInputCompleted(passwordElement, 100)
+        
         authFormElement.submit()
     }
 
