@@ -10,5 +10,6 @@
 // ==/UserScript==
 
 (function() {
-   setTimeout(() => document.querySelector(`#auth_form`).submit(), 1000)
+   /* スマートな方法知りたい…… */
+   setTimeout(() => document.querySelector(`#auth_form`).submit(), 1500)
 })()
