@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto Login sso.fun.ac.jp
-// @namespace    https://github.com/m-atarashi/UserStyle-Zoo/new/main/HOPE
-// @version      0.1
+// @namespace    http://tampermonkey.net/
+// @version      0.2
 // @description  auto login sso.fun.ac.jp
 // @author       m-atarashi
 // @match        https://sso.fun.ac.jp/my.policy
@@ -9,7 +9,26 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
-   /* スマートな方法知りたい…… */
-   setTimeout(() => document.querySelector(`#auth_form`).submit(), 1500)
+(() => {
+    function waitOnInputCompleted(inputElement, intervalms) {
+        return new Promise((resolve, reject) => {
+            setInterval(() => {
+                if (inputElement.value !== "") resolve()
+                else console.log('まだにぇ？')
+            }, intervalms)
+        })
+    }
+
+    async function main() {
+        const authFormElement = document.querySelector('#auth_form')
+        const usernameElement = authFormElement.querySelector('[name="username"]', authFormElement)
+        const passwordElement = authFormElement.querySelector('[name="password"]', authFormElement)
+        await waitOnInputCompleted(usernameElement, 100)
+        await waitOnInputCompleted(passwordElement, 100)
+
+        const submitElement = authFormElement.querySelector('[type="submit"]', authFormElement)
+        authFormElement.submit()
+    }
+
+    main()
 })()
