@@ -4,7 +4,7 @@
 // @version      0.2
 // @description  Add custom classes to hope timetable.
 // @author       m-atarashi
-// @match        https://hope.fun.ac.jp/*
+// @match        https://hope.fun.ac.jp/my*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=fun.ac.jp
 // @grant        none
 // ==/UserScript==
