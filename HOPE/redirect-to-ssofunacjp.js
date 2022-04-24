@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Redirect to sso.fun.ac.jp automatically
+// @name         redirect-to-sso.fun.ac.jp
 // @namespace    https://github.com/m-atarashi/UserStyle-Zoo/tree/main/HOPE
 // @version      0.2
 // @description  redirect to sso.fun.ac.jp automatically
