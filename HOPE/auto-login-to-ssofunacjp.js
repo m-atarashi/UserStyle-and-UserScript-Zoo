@@ -13,21 +13,27 @@
     function waitOnInputCompleted(inputElement, intervalms) {
         return new Promise((resolve, reject) => {
             setInterval(() => {
-                if (inputElement.value !== "") resolve()
-                else console.log('まだにぇ？')
+                if (inputElement.value !== "") return resolve()
+            }, intervalms)
+        })
+    }
+
+    function waitForElement(selector, intervalms) {
+        return new Promise((resolve, reject) => {
+            setInterval(() => {
+                const element = document.querySelector(selector)
+                if (element !== null && element !== undefined) return resolve(element)
             }, intervalms)
         })
     }
 
     async function main() {
-        const authFormElement = document.querySelector('#auth_form')
-        const usernameElement = authFormElement.querySelector('input[name="username"]')
-        const passwordElement = authFormElement.querySelector('input[name="password"]')
+        const authFormElement = await waitForElement('#auth_form')
+        const usernameElement = await waitForElement('input[name="username"]')
+        const passwordElement = await waitForElement('input[name="password"]')
 
-        await waitOnInputCompleted(usernameElement, 100)
-        await waitOnInputCompleted(passwordElement, 100)
-
-        authFormElement.submit()
+        await Promise.all([waitOnInputCompleted(usernameElement, 100), waitOnInputCompleted(passwordElement, 100)])
+            .then(() => authFormElement.submit())
     }
 
     main()
