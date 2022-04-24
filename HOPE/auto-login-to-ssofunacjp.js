@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         auto-login-to-sso.fun.ac.jp
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/m-atarashi/UserStyle-Zoo/tree/main/HOPE
 // @version      0.2
 // @description  auto login sso.fun.ac.jp
 // @author       m-atarashi
