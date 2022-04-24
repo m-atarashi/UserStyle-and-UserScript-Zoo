@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Auto Login sso.fun.ac.jp
+// @name         auto-login-to-sso.fun.ac.jp
 // @namespace    http://tampermonkey.net/
 // @version      0.2
 // @description  auto login sso.fun.ac.jp
@@ -25,8 +25,6 @@
         const passwordElement = authFormElement.querySelector('[name="password"]')
         await waitOnInputCompleted(usernameElement, 100)
         await waitOnInputCompleted(passwordElement, 100)
-
-        const submitElement = authFormElement.querySelector('[type="submit"]')
         authFormElement.submit()
     }
 
