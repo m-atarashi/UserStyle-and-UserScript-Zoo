@@ -13,11 +13,12 @@
 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=ja "Tampermonkey")に導入することで、未来大の時間割に含まれない任意の授業を[TimeTable for HOPE](https://github.com/Better-HOPE/timetable-for-hope "TimeTable for HOPE")の時間割テーブルに追加することができます。
 例えば、上の画像における月曜2限「ラボミーティング」、火曜6限「GCI 2022 Summer」が追加された授業に相当します。
 
-## redirect-to-ssofunjpac.js
-HOPEのホームページ(hope.fun.ac.jp)にログアウトした状態でアクセスすると、ログイン画面（sso.fun.ac.jp）に自動で遷移します。
+## auto-login-to-hope.js
+[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=ja "Tampermonkey")に導入することで、HOPEに自動でログインすることができます。
 
-## auto-login-to-ssofunacjp.js
-HOPEに自動でログインし、HOPEのマイページ（hope.fun.ac.jp/my）に遷移します。
+1. HOPEのホームページ(hope.fun.ac.jp)にログアウトした状態でアクセスすると、自動的にログイン画面（sso.fun.ac.jp）に遷移します。
+2. その後、Chromeに保存されたユーザー名とパスワードが自動入力され、自動的にHOPEにログインします。
+4. ログインに成功するとHOPEのマイページ（hope.fun.ac.jp/my）に遷移します。
 
 ## Acknowledgement
 Stylus 提供元の [stylus.openstyles](https://add0n.com/stylus.html "stylus.openstyles") 様、Tampermonkey 開発者の [Jan Biniok](https://github.com/derjanb "Jan Biniok") 氏、[TimeTable for HOPE](https://github.com/Better-HOPE/timetable-for-hope "TimeTable for HOPE") 開発者の [cathiecode](https://github.com/cathiecode "cathiecode") 氏に感謝申し上げます。
