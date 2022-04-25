@@ -1,9 +1,9 @@
-# Glassy HOPE
+# Styles and Scripts for HOPE
+
+## glassy-hope.css
 ![glassy_hope01](https://user-images.githubusercontent.com/67362239/163711199-e1fe2d6c-2cea-45bf-ad39-c5a032b59453.png)
 ![glassy_hope02](https://user-images.githubusercontent.com/67362239/163711209-d5ad2145-b28b-4a2d-a45b-5258cb9e8f68.png)
 ![glassy_hope03](https://user-images.githubusercontent.com/67362239/163711212-e0989458-80ed-490e-9390-d613f2b23fa1.png)
-
-## glassy-hope.css
 [Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=ja "Stylus")にUserCSSとして導入することで、HOPEのUIが透明感のある美しい外観に変わります。
 
 `--custom-bg-img`カスタムプロパティをWeb上の任意の画像URLに変更することで、背景をお好きな画像に設定することができます。
