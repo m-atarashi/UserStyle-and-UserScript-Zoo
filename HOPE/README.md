@@ -14,11 +14,11 @@
 例えば、上の画像における月曜2限「ラボミーティング」、火曜6限「GCI 2022 Summer」が追加された授業に相当します。
 
 ## auto-login-to-hope.js
-[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=ja "Tampermonkey")に導入することで、HOPEに自動でログインすることができます。
+[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=ja "Tampermonkey")に導入することで、[HOPE](https://hope.fun.ac.jp/ "HOPE")に自動でログインできるようになります。
 
 1. HOPEのホームページ(hope.fun.ac.jp)にログアウトした状態でアクセスすると、自動的にログイン画面（sso.fun.ac.jp）に遷移します。
 2. その後、Chromeに保存されたユーザー名とパスワードが自動入力され、自動的にHOPEにログインします。
-4. ログインに成功するとHOPEのマイページ（hope.fun.ac.jp/my）に遷移します。
+3. ログインに成功するとHOPEのマイページ（hope.fun.ac.jp/my）に遷移します。
 
 ## Acknowledgement
 Stylus 提供元の [stylus.openstyles](https://add0n.com/stylus.html "stylus.openstyles") 様、Tampermonkey 開発者の [Jan Biniok](https://github.com/derjanb "Jan Biniok") 氏、[TimeTable for HOPE](https://github.com/Better-HOPE/timetable-for-hope "TimeTable for HOPE") 開発者の [cathiecode](https://github.com/cathiecode "cathiecode") 氏に感謝申し上げます。
