@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         auto-login-to-hope
-// @namespace    https://github.com/m-atarashi/UserStyle-Zoo/tree/main/HOPE
+// @namespace    https://github.com/m-atarashi/UserStyle-and-UserScript-Zoo/tree/main/HOPE
 // @version      0.1
 // @description  Login to HOPE automatically.
 // @author       m-atarashi
