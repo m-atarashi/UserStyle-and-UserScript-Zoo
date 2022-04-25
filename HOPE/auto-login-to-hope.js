@@ -17,12 +17,12 @@
     'use strict'
 
     const loginPagePattern = /https:\/\/hope\.fun\.ac\.jp(\/local\/hope\/login\.php.*)?/
-    if (location.href.match(loginPagePattern)){
+    if (location.href.match(loginPagePattern)) {
         location.href = 'https://hope.fun.ac.jp/auth/saml2/login.php?idp=1bec319bca7458548c77d545a2a1b3de'
     }
 
     if (location.href === 'https://sso.fun.ac.jp/my.policy') {
-        (async() => {
+        (async () => {
             const cred = await navigator.credentials.get({
                 password: true
             })
