@@ -12,9 +12,9 @@
 (async() => {
 	const cred = await navigator.credentials.get({
 		password: true
-	});
+	})
 
-	document.querySelector(`#auth_form input[name="username"]`).value = cred.id;
-	document.querySelector(`#auth_form input[name="password"]`).value = cred.password;
-	document.querySelector(`#auth_form`).submit();
+	document.querySelector(`#auth_form input[name="username"]`).value = cred.id
+	document.querySelector(`#auth_form input[name="password"]`).value = cred.password
+	document.querySelector(`#auth_form`).submit()
 })()
