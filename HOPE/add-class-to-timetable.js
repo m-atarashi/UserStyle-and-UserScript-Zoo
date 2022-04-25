@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         add-class-to-timetable
-// @namespace    https://github.com/m-atarashi/UserStyle-Zoo/tree/main/HOPE
+// @namespace    https://github.com/m-atarashi/UserStyle-and-UserScript-Zoo/tree/main/HOPE
 // @version      0.2
 // @description  Add custom classes to hope timetable.
 // @author       m-atarashi
