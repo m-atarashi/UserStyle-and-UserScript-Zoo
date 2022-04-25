@@ -7,6 +7,8 @@
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.deepl.com") {
+/* ──────────────────────────────フォントカスタマイズ────────────────────────────── */
+    /* sans-serif */
     @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
     /* serif */
@@ -14,32 +16,18 @@
     @import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
     
+     textarea[lang="ja-JP"] {
+        font-family: 'FinalSix Light', 'Comfortaa', 'Zen Maru Gothic', sans-serif !important;
+    }
     
+/* ──────────────────────────────広告他非表示────────────────────────────── */
     div#lmt_pro_ad_container,
     div#dl_quotes_container,
     aside[aria-label="対応言語"] {
         display: none !important;
     }
     
-    textarea[lang="ja-JP"] {
-        font-family: 'FinalSix Light', 'Comfortaa', 'Zen Maru Gothic', sans-serif !important;
-    }
-    textarea[lang="en-EN"], 
-    textarea[lang="en-EN"] + .lmt__source_textarea_overlay .lmt__source_textarea_overlay__sentence--active,
-    textarea[lang="en-EN"] + .lmt__source_textarea_overlay .lmt__source_textarea_overlay__text {
-        font-family: 'Zen Maru Gothic', sans-serif !important;
-        font-size: 18px !important;
-    }
-
-    .lmt--web .lmt__source_textarea {
-        overflow-y: visible;
-    }
-    div.lmt__source_textarea_overlay.lmt__textarea_base_style::-webkit-scrollbar,
-    .lmt--web .lmt__source_textarea::-webkit-scrollbar {
-        display: none !important;
-    }
-    
-    
+/* ──────────────────────────────Vivaldiサイドパネル用────────────────────────────── */
     @media (max-width: 500px) {
         /* 入力欄・翻訳結果を縦並びにする */
         .lmt__sides_container {
