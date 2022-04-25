@@ -14,7 +14,7 @@
 // ==/UserScript==
 
 (() => {
-    'use strict';
+    'use strict'
 
     async function automaticLogin() {
         const cred = await navigator.credentials.get({ password: true })
