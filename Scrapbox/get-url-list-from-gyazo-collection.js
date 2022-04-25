@@ -1,4 +1,4 @@
-(function() {
+(() => {
 const url_stems = Array.from(document.querySelector(".images-grid-view").getElementsByClassName("view-operation")).map(e => `https://i.gyazo.com${e.attributes.href.textContent}`)
 const exts = Array.from(document.querySelector(".images-grid-view").getElementsByClassName("thumb loaded")).map(e => e.attributes.src.textContent.slice(-7,-4))
 
