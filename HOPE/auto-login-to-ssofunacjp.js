@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         auto-login-to-sso.fun.ac.jp
 // @namespace    https://github.com/m-atarashi/UserStyle-Zoo/tree/main/HOPE
-// @version      0.2
+// @version      0.3
 // @description  auto login sso.fun.ac.jp
 // @author       m-atarashi
 // @match        https://sso.fun.ac.jp/my.policy
@@ -9,32 +9,12 @@
 // @grant        none
 // ==/UserScript==
 
-(() => {
-    function waitOnInputCompleted(inputElement, intervalms) {
-        return new Promise((resolve, reject) => {
-            setInterval(() => {
-                if (inputElement.value !== "") return resolve()
-            }, intervalms)
-        })
-    }
+(async() => {
+	const cred = await navigator.credentials.get({
+		password: true
+	});
 
-    function waitForElement(selector, intervalms) {
-        return new Promise((resolve, reject) => {
-            setInterval(() => {
-                const element = document.querySelector(selector)
-                if (element !== null && element !== undefined) return resolve(element)
-            }, intervalms)
-        })
-    }
-
-    async function main() {
-        const authFormElement = await waitForElement('#auth_form')
-        const usernameElement = await waitForElement('input[name="username"]')
-        const passwordElement = await waitForElement('input[name="password"]')
-
-        await Promise.all([waitOnInputCompleted(usernameElement, 100), waitOnInputCompleted(passwordElement, 100)])
-            .then(() => authFormElement.submit())
-    }
-
-    main()
+	document.querySelector(`#auth_form input[name="username"]`).value = cred.id;
+	document.querySelector(`#auth_form input[name="password"]`).value = cred.password;
+	document.querySelector(`#auth_form`).submit();
 })()
